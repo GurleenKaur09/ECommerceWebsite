@@ -1,10 +1,12 @@
 /* Navbar Section  */
 .navbar {
   position: relative !important;
-  background-color: white;
+  background-color: #0f3460;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   font-size: 1.2rem !important;
+  height: 100px;
+  color: white;
 }
 
 .navbar.fixed {
@@ -14,11 +16,26 @@
   top: 0;
 }
 
+.select {
+  border: white;
+  background-color: #0f3460;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
 .nav-upper{
   display: flex;
   justify-content: flex-end;
   font-size: 13px;
   padding-bottom: 0;
+  padding-top: 10px;
+  background-color: #0f3460;
+  color: white;
+}
+
+.nav-upper-items {
+  margin-left: 10px;
 }
 
 .nav-upper span:last-child{
@@ -28,6 +45,7 @@ margin-right: 80px;
 .navbar-container {
   display: flex;
   justify-content: space-between !important;
+  max-width: 1600px;
 }
 
 .navbar-toggler {
@@ -109,6 +127,7 @@ margin-right: 80px;
   font-weight: 500;
   color: black;
   margin: 0;
+  color: white;
 }
 
 .navbar-link {
@@ -125,6 +144,7 @@ margin-right: 80px;
   color: black;
   font-size: 18px !important;
   font-weight: 600;
+  color: white;
 }
 
 .nav-icon {

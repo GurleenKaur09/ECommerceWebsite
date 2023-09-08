@@ -4,7 +4,7 @@ import Product from "./Product/Product"
 const Section = ({ title, bgColor , productItems, addToCart }) => {
 return (
     <section style={{ background:bgColor }}> 
-        <Container>
+        <Container style={{maxWidth: '1600px'}}>
             <div className='heading'>
                 <h1>{title}</h1>
             </div>

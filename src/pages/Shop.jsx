@@ -18,21 +18,21 @@ const Shop = () => {
     return ( 
         <Fragment>
             <div className="d-flex" style={{marginTop:'50px', marginLeft:'130px', color:'gray'}}>
-            <h3>Shop Products</h3>
-            <p style={{margin:'5px 11px'}}>({products.length} {' '}items)</p>
+            <h3 style={{marginLeft: '-60px'}}>Shop Products</h3>
+            <p style={{margin:'5px 11px'}}></p>
             </div>
             <section className="filter-bar">
-                <Container className="filter-bar-contianer">
+                <Container style={{maxWidth: '1600px'}} className="filter-bar-contianer">
                     <Row className="justify-content-center">
                         <Col md={4}>
                             <FilterSelect setFilterList={setFilterList}/>
                         </Col>
-                        <Col md={8} style={{width: '62%'}}>
+                        <Col md={8}>
                             <SearchBar setFilterList={setFilterList}/>
                         </Col>
                     </Row>
                 </Container>
-                <Container>
+                <Container style={{maxWidth: '1600px'}}>
                     <ShopList productItems={filterList} addToCart={addToCart}/>
                 </Container>
             </section>

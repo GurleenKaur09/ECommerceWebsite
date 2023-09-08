@@ -2,11 +2,12 @@
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 650px;
+    width: 650px;
     height: 40px;
     padding:15px;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: #f2f2f2;
+    margin-left: 100px;
 }
 
 input[type="text"] {
@@ -24,6 +25,6 @@ input[type="text"] {
     position: absolute;
     right: 0;
     font-size: 20px;
-    color: #999;
+    color: #333;
     cursor: pointer;
 }

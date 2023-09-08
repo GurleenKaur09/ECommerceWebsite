@@ -32,7 +32,7 @@ const ProductDetails = () => {
         <Fragment>
             <Banner title={selectedProduct?.productName} />
             <section className="product-page">
-                <Container>
+                <Container style={{maxWidth: '1600px'}}>
                     <Row className="justify-content-center">
                         <Col md={6}>
                             <img loading="lazy" src={selectedProduct?.imgUrl} alt=""/>

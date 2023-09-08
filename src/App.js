@@ -6,7 +6,6 @@ import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DarkMode from "./components/darkMode/DarkMode";
 import "./index.css";
 const Home =lazy(()=> import("./pages/Home"))
 const Shop =lazy(()=> import("./pages/Shop"))
@@ -67,7 +66,6 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
           <Footer />
-          <DarkMode />
         </Router>
       </Suspense>
     </DataContainer.Provider>

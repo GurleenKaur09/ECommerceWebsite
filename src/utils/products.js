@@ -65,25 +65,25 @@ export const serviceData = [
     icon: <ion-icon name="car"></ion-icon>,
     title: "Free Shipping",
     subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#fdefe6",
+    bg: "#bcd9ea",
+  },
+  {
+    icon: <ion-icon name="logo-paypal"></ion-icon>,
+    title: "Secure Payment",
+    subtitle: "Lorem ipsum dolor sit amet.",
+    bg: "#bcd9ea",
   },
   {
     icon: <ion-icon name="card"></ion-icon>,
-    title: "Safe Payment",
+    title: "Upto 10% Cashback on Credit Card",
     subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#ceebe9",
-  },
-  {
-    icon: <ion-icon name="shield-half-outline"></ion-icon>,
-    title: "Secure Payment",
-    subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#e2f2b2",
+    bg: "#bcd9ea",
   },
   {
     icon: <ion-icon name="headset"></ion-icon>,
-    title: " Back Guarantee",
+    title: "Return Policy",
     subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#d6e5fb",
+    bg: "#bcd9ea",
   },
 ];
 

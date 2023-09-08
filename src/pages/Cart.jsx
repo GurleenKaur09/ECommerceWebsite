@@ -1,9 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { DataContainer } from "../App"
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import{SlTrash} from 'react-icons/sl'
 
 const Cart = () => {
+  const [expand, setExpand] = useState(false);
   const { CartItem, setCartItem, addToCart, decreaseQty, deleteProduct} =useContext(DataContainer);
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
   useEffect(()=> {
@@ -15,13 +17,13 @@ const Cart = () => {
   },[])
   return (
       <section className='cart-items'>
-        <Container>
+        <Container style={{maxWidth: '1600px'}}>
         
           <Row className="justify-content-center">
               <Col md={8}>
               <h5> Shopping Cart({CartItem.length}) </h5>
                <hr />
-                {CartItem.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
+                {CartItem.length === 0 && <h1 className='no-items product'>No Items are added in Cart</h1>}
                 {CartItem.map((item) => {
                   const productQty = item.price * item.qty
                   return (
@@ -60,20 +62,19 @@ const Cart = () => {
                 })}
               </Col>
               <Col md={4}>
-                <div className='cart-total' style={{marginTop:'50px', maxHeight:'350px',
-                 height:'100vh', border:'1px solid #808080'}}>
+                <div className='cart-total' >
                   <h2>Cart Summary</h2>
                   <h5 style={{fontSize: '14px'}}>Price Details ({CartItem.length})</h5>
                   <div className="d-flex" style={{fontSize:'14px'}}>
-                   <p>MRP Total</p>
-                   <p style={{marginLeft: '145px'}}>${totalPrice}</p>
+                   <p style={{marginTop: '10px'}}>MRP Total</p>
+                   <p style={{marginLeft: '142px', marginTop: '10px'}}>${totalPrice}</p>
                   </div>
                   <div className="d-flex" style={{fontSize:'14px'}}>
-                   <p>MRP Discount</p>
-                   <p style={{marginLeft: '120px'}}>$0</p>
+                   <p>Discount %</p>
+                   <p style={{marginLeft: '135px'}}>0%</p>
                   </div>
                   <div className="d-flex" style={{fontSize:'14px'}}>
-                   <p>Delivery Charged</p>
+                   <p>Delivery Charges</p>
                    <p style={{marginLeft: '100px'}}>Free</p>
                   </div>
                   <hr />
@@ -83,8 +84,13 @@ const Cart = () => {
                   </div>
                   <hr />
                   <div>
-                    <button className="btn btn-success" style={{width:'100%'}}>continue To Checkout</button>
+                    <button className="btn btn-success" style={{width:'100%'}}>Continue To Checkout</button>
                   </div>
+                </div>
+                <div>
+                  <Link aria-label="Go to Home Page" to="/" onClick={() => setExpand(false)}>
+                    <button className="button-cart">Continue Shopping</button>
+                  </Link>
                 </div>
               </Col>
           </Row>

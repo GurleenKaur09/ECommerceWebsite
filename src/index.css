@@ -69,9 +69,15 @@ button {
 .homeSlide {
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
-  padding-bottom: 0 !important;
-  color: #000000;
+  background-color: #5293BB;
+  color: #ffffff;
+  margin-top: -80px;
+}
+
+.btn-primary {
+  border-radius: 5px;
+  padding: 5px;
+  color: #0f3460;
 }
 
 .homeSlide-dark{
@@ -93,6 +99,7 @@ button {
 
 .filter-bar-contianer .row {
   flex-wrap: wrap-reverse !important;
+  margin-left: -30px;
 }
 
 @media (max-width:767px) {
@@ -205,6 +212,10 @@ button {
   height: auto;
 }
 
+.cart-details {
+  border-radius: 5px;
+}
+
 .cart-items .cart-total {
   background-color: white;
   padding: 20px;
@@ -218,6 +229,7 @@ button {
   margin-bottom: 30px;
   padding: 20px;
   border: 1px solid #808080;
+  border-radius: 5px;
 }
 
 .cart-list .image-holder {
@@ -303,6 +315,16 @@ button {
   background: #f6f9fc;
 }
 
+.cart-items .cart-total {
+  height: 370px;
+}
+
+.cart-total {
+  margin-top: 57px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
 .cart-total h4 {
   font-size: 15px;
   font-weight: 400;
@@ -343,6 +365,14 @@ button.delete {
 
 button.delete ion-icon {
   font-size: 30px;
+}
+
+.button-cart {
+  background-color: #5293BB;
+  color: #ffffff;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 @media (max-width:575px) {
