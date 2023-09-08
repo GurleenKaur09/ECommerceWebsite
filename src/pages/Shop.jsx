@@ -10,19 +10,24 @@ import { DataContainer } from "../App";
 const Shop = () => {
     const {addToCart} =useContext(DataContainer);
     const [filterList,setFilterList] = useState(products.filter(item => item.category ==="sofa"));
+    const [sortedList, setSortedList] = useState(filterList);
+    
     useEffect(()=> {
         window.scrollTo(0,0);
     },[])
     return ( 
         <Fragment>
-            <Banner title="product"/>
+            <div className="d-flex" style={{marginTop:'50px', marginLeft:'130px', color:'gray'}}>
+            <h3>Shop Products</h3>
+            <p style={{margin:'5px 11px'}}>({products.length} {' '}items)</p>
+            </div>
             <section className="filter-bar">
                 <Container className="filter-bar-contianer">
                     <Row className="justify-content-center">
                         <Col md={4}>
                             <FilterSelect setFilterList={setFilterList}/>
                         </Col>
-                        <Col md={8}>
+                        <Col md={8} style={{width: '62%'}}>
                             <SearchBar setFilterList={setFilterList}/>
                         </Col>
                     </Row>

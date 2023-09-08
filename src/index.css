@@ -28,8 +28,8 @@ code {
 }
 
 section {
-  padding-top: 60px !important;
-  padding-bottom: 60px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 a {
@@ -217,6 +217,7 @@ button {
   background: white;
   margin-bottom: 30px;
   padding: 20px;
+  border: 1px solid #808080;
 }
 
 .cart-list .image-holder {
@@ -279,9 +280,17 @@ button {
 
 .cartControl button {
   width: 40px;
-  height: 40px;
+  height: 30px;
   border-radius: 5px;
   font-size: 20px;
+}
+.cartControl h4 {
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #f1f1f1;
+  text-align: center;
 }
 
 .incCart {
@@ -329,7 +338,7 @@ button.delete {
   border: none;
   outline: none;
   background-color: transparent;
-  color: black;
+  color: blue;
 }
 
 button.delete ion-icon {

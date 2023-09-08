@@ -17,7 +17,7 @@ const customStyles = {
         borderRadius: "5px",
         border: "none",
         boxShadow: "none",
-        width: "200px",
+        width: "150px",
         height: "40px",
     }),
     option: (provided, state) => ({
@@ -42,7 +42,7 @@ const FilterSelect = ({setFilterList}) => {
     return (
     <Select
     options={options}
-    defaultValue={{ value: "", label: "Filter By Category" }}
+    defaultValue={{ value: "", label: "Category" }}
     styles={customStyles}
     onChange={handleChange}
     />

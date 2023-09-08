@@ -23,6 +23,7 @@ const Product = ({title,productItem,addToCart}) => {
     }
     return (
     <Col md={3} sm={5} xs={10} className="product mtop">
+        <div className="product-container">
         {title ==="Big Discount"? <span className="discount">{productItem.discount}% Off</span>:null}
         <img loading="lazy" onClick={()=>handelClick()} src={productItem.imgUrl} alt=""/>
         <div className="product-like">
@@ -47,6 +48,8 @@ const Product = ({title,productItem,addToCart}) => {
             </button>
         </div>
     </div>
+    </div>
+    <p style={{fontSize:'14px', color:'gray'}}>Earliest delivery: <span style={{color: 'green'}}>Today</span></p> 
     </Col>
     );
 };

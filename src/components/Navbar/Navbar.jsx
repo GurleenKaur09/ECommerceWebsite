@@ -1,12 +1,15 @@
 import { useContext, useEffect, useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
+import { products } from "../../utils/products";
 import { DataContainer } from "../../App";
 import { Link } from "react-router-dom";
+import SearchBar from "../SeachBar/SearchBar";
 const NavBar = () => {
   const {CartItem,setCartItem} =useContext(DataContainer);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [filterList,setFilterList] = useState(products.filter(item => item.category ==="sofa"));
   // fixed Header
   function scrollHandler() {
     if (window.scrollY >= 100) {
@@ -23,16 +26,26 @@ const NavBar = () => {
     }
   },[])
   return (
+      <div>
+        <div className="nav-upper">
+          <span style={{marginLeft: '10px'}}>+91 8986799671</span>{'  '}
+          <span style={{marginLeft: '10px'}}>Help</span> {'  '}
+          <span style={{marginLeft: '10px'}}>Offer</span> {'  '}
+          <span style={{marginLeft: '10px'}}>Visit Store</span>{'  '}
+          <span style={{marginLeft: '10px'}}>techtok4u@gmail.com</span>
+        </div>
       <Navbar
       fixed="top"
       expand="md"
       className={isFixed ? "navbar fixed":"navbar"}
-      >
+      > 
         <Container className="navbar-container">
             <Navbar.Brand to="/">
               <ion-icon name="bag"></ion-icon>
               <h1 className="logo">TechTok4u</h1>
             </Navbar.Brand>
+            <SearchBar setFilterList={setFilterList} style={{width:'100%',maxWidth:'750px',
+          marginLeft:'20px'}}/>
             {/* Media cart and toggle */}
             <div className="d-flex">
               <div className="media-cart">
@@ -89,6 +102,7 @@ const NavBar = () => {
         </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
   )
 }
 
