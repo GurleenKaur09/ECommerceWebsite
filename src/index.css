@@ -69,23 +69,20 @@ button {
 .homeSlide {
   display: flex;
   justify-content: center;
-  background-color: #5293BB;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   margin-top: -80px;
 }
 
 .btn-primary {
   border-radius: 5px;
   padding: 5px;
-  color: #0f3460;
+  color: #ffffff;
+  background-color: #0f3460;
 }
 
-.homeSlide-dark{
-  display: flex;
-  justify-content: center;
-  background-color: #000000;
-  padding-bottom: 0 !important;
-  color: #ffffff;
+.ad-img {
+  border-radius: 5px;
 }
 
 /*   ---Shop Pages---   */
@@ -99,7 +96,7 @@ button {
 
 .filter-bar-contianer .row {
   flex-wrap: wrap-reverse !important;
-  margin-left: -30px;
+  margin-left: -80px;
 }
 
 @media (max-width:767px) {
@@ -111,6 +108,12 @@ button {
 .not-found {
   margin: 40px auto 20px;
   width: fit-content;
+}
+
+.shopping {
+  margin-top: 50px;
+  margin-left: 130px;
+  color: gray;
 }
 
 /*   ---Product Details---   */

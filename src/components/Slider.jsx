@@ -3,7 +3,8 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Container } from "react-bootstrap"
 import SlideCard from "./SliderCard/SlideCard"
-import { SliderData } from "../utils/products"
+import { AdData, SliderData } from "../utils/products"
+import AdSlider from "./AdSlider/AdSlider"
 
 const SliderHome = () => {
   const settings = {
@@ -20,6 +21,13 @@ const SliderHome = () => {
           {SliderData.map((value, index) => {
             return (
               <SlideCard key={index} title={value.title} cover={value.cover} desc={value.desc} />
+            )
+          })}
+        </Slider><br />
+        <Slider {...settings}>
+          {AdData.map((value, index) => {
+            return (
+              <AdSlider key={index} imgUrl={value.imgUrl} />
             )
           })}
         </Slider>

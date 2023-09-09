@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { DataContainer } from "../../App";
 import { toast } from "react-toastify";
 
-const Product = ({title,productItem,addToCart}) => {
+const Product = ({title,productItem,addToCart,addToWishlist}) => {
     const {setSelectedProduct} =useContext(DataContainer);
     const router =useNavigate();
     const [count, setCount] = useState(0);
@@ -21,14 +21,18 @@ const Product = ({title,productItem,addToCart}) => {
         addToCart(productItem);
         toast.success("Product has been added to cart!");
     }
+    const handelAddwishlist =(productItem)=> {
+        addToWishlist(productItem);
+        toast.success("Product has been added to wishlist!");
+    }
+    
     return (
     <Col md={3} sm={5} xs={10} className="product mtop">
         <div className="product-container">
         {title ==="Big Discount"? <span className="discount">{productItem.discount}% Off</span>:null}
         <img loading="lazy" onClick={()=>handelClick()} src={productItem.imgUrl} alt=""/>
-        <div className="product-like">
-            <label>{count}</label> <br />
-            <ion-icon name="heart-outline" onClick={increment}></ion-icon>
+        <div className="product-like"> <br />
+            <ion-icon name="heart-outline" onClick={() => handelAddwishlist(productItem)}></ion-icon>
         </div>
         <div className="product-details">
             <h3 onClick={()=>handelClick()}>

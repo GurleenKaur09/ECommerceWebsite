@@ -55,7 +55,7 @@ const PriceRangeSelect = ({ setFilterList }) => {
   return (
     <Select
       options={options}
-      defaultValue={{ value: '', label: 'Prices' }}
+      defaultValue={{ value: "", label: 'Prices' }}
       onChange={handleChange}
       styles={customStyles}
     />

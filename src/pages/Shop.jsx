@@ -10,7 +10,7 @@ import PriceRangeSelect from '../components/SortPrice'
 import { DataContainer } from "../App";
 
 const Shop = () => {
-    const {addToCart} =useContext(DataContainer);
+    const {addToCart, addToWishlist} =useContext(DataContainer);
     const [filterList,setFilterList] = useState(products.filter(item => item.category ==="sofa"));
     const [sortedList, setSortedList] = useState(filterList);
     const [priceRangeFilter, setPriceRangeFilter] = useState('');
@@ -22,10 +22,8 @@ const Shop = () => {
    
     return ( 
         <Fragment>
-            <SliderHome />
-            <div className="d-flex" style={{marginTop:'50px', marginLeft:'130px', color:'gray'}}>
+            <div className="shopping">
             <h3 style={{marginLeft: '-60px'}}>Shop Products</h3>
-            <p style={{margin:'5px 11px'}}></p>
             </div>
             <section className="filter-bar">
                 <Container style={{maxWidth: '1600px'}} className="filter-bar-contianer">
@@ -42,7 +40,7 @@ const Shop = () => {
                     </Row>
                 </Container>
                 <Container style={{maxWidth: '1600px'}}>
-                    <ShopList productItems={filterList} addToCart={addToCart}/>
+                    <ShopList productItems={filterList} addToCart={addToCart} addToWishlist={addToWishlist}/>
                 </Container>
             </section>
         </Fragment>

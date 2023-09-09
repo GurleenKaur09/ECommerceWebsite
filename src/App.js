@@ -11,10 +11,12 @@ import { Checkout } from "./pages/Checkout";
 const Home =lazy(()=> import("./pages/Home"))
 const Shop =lazy(()=> import("./pages/Shop"))
 const Cart =lazy(()=> import("./pages/Cart"))
+const Wishlist =lazy(()=> import("./pages/Wishlist"))
 const ProductDetails =lazy(()=> import("./pages/ProductDetails"));
 export const DataContainer = createContext();
 function App() {
   const [CartItem, setCartItem] = useState([])
+  const [WishlistItem, setWishlistItem] = useState([])
   const [selectedProduct,setSelectedProduct]=useState(null);
 
   const addToCart = (product,num=1) => {
@@ -23,6 +25,16 @@ function App() {
       setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + num } : item)))
     } else {
       setCartItem([...CartItem, { ...product, qty: num }])
+    }
+  }
+
+  const addToWishlist = (product,num=1) => {
+    const productExit = WishlistItem.find((item) => item.id === product.id)
+    if (productExit) {
+      setWishlistItem(WishlistItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + num } : item)))
+    }
+    else {
+      setWishlistItem([WishlistItem, { ...product, qty: num }])
     }
   }
 
@@ -41,11 +53,20 @@ function App() {
   const deleteProduct = (product)=> {
       setCartItem(CartItem.filter((item) => item.id !== product.id))
   }
+
+  const deleteWishlist = (product)=> {
+    setWishlistItem(WishlistItem.filter((item) => item.id !== product.id))
+}
   useEffect(()=> {
       localStorage.setItem("cartItem",JSON.stringify(CartItem));
   },[CartItem])
+
+  useEffect(()=> {
+    localStorage.setItem("WishlistItem",JSON.stringify(WishlistItem));
+  },[WishlistItem])
+
   return (
-    <DataContainer.Provider value={{CartItem,setCartItem,addToCart,decreaseQty,deleteProduct,selectedProduct,setSelectedProduct}}>
+    <DataContainer.Provider value={{CartItem,setCartItem,addToCart,decreaseQty,deleteProduct,selectedProduct,setSelectedProduct,WishlistItem,setWishlistItem,addToWishlist,deleteWishlist}}>
       <Suspense fallback={<Loader/>}>
         <Router>
         <ToastContainer
@@ -66,6 +87,7 @@ function App() {
             <Route path='/shop/:id' element={<ProductDetails/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/wishlist' element={<Wishlist/>} />
           </Routes>
           <Footer />
         </Router>

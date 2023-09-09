@@ -1,0 +1,16 @@
+.card {
+    border-radius: 100%;
+}
+
+.card-img {
+    height: 210px;
+    width: 180px;
+    margin-left: 30px;
+    border-radius: 100%;
+}
+
+.card-title {
+    margin-left: 80px;
+    font-size: large;
+    font-weight: bold;
+}

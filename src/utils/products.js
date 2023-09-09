@@ -24,6 +24,9 @@ import watch01 from "../Images/watch-01.jpg";
 import watch02 from "../Images/watch-02.jpg";
 import watch03 from "../Images/watch-03.jpg";
 import watch04 from "../Images/watch-04.jpg";
+import watch05 from "../Images/watch-05.png";
+import watch06 from "../Images/watch-06.png";
+import watch07 from "../Images/watch-07.png";
 
 import wireless01 from "../Images/wireless-01.png";
 import wireless02 from "../Images/wireless-02.png";
@@ -32,6 +35,52 @@ import wireless04 from "../Images/wireless-04.png";
 
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
+
+import code from "../Images/code.jpg"
+import cashback from "../Images/cashback.jpg"
+import cashback2 from "../Images/cashback2.jpg"
+
+export const categories = [
+  {
+    imgUrl: productImg04,
+    title: "Single Sofa"
+  },
+  {
+    imgUrl: productImg01,
+    title: "Double Sofa"
+  },
+  {
+    imgUrl: productImg07,
+    title: "Arm Chair"
+  },
+  {
+    imgUrl: phone02,
+    title: "Phones"
+  },
+  {
+    imgUrl: watch04,
+    title: "Watches"
+  },
+  {
+    imgUrl: wireless01,
+    title: "Wireless"
+  }
+]
+
+export const AdData = [
+  {
+    id: 1,
+    imgUrl: code
+  },
+  {
+    id: 2,
+    imgUrl: cashback
+  },
+  {
+    id: 3,
+    imgUrl: cashback2
+  }
+]
 
 export const SliderData = [
   {

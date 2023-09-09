@@ -81,7 +81,7 @@ const Cart = () => {
               <Col md={4}>
                 <div className='cart-total' >
                   <h2>Cart Summary</h2>
-                  <h5 style={{fontSize: '14px'}}>Price Details ({CartItem.length})</h5>
+                  <h5 style={{fontSize: '16px'}}>Price Details ({CartItem.length})</h5>
                   <div className="d-flex" style={{fontSize:'14px'}}>
                    <p style={{marginTop: '10px'}}>MRP Total</p>
                    <p style={{marginLeft: '142px', marginTop: '10px'}}>${totalPrice}</p>
