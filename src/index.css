@@ -384,3 +384,87 @@ button.delete ion-icon {
     margin: 10px auto;
   }
 }
+
+.sort-bars{
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkout{
+  display: flex;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper{
+display: flex;
+flex-direction: column;
+border: 1px solid #808080;
+border-radius: 5px;
+padding: 0px 10px 10px 10px;
+width: 100%;
+max-width: 700px;
+margin-left: 50px;
+}
+
+.input-wrapper label{
+  margin-bottom: 5px
+}
+
+.checkout input{
+  border: 1px solid#808080;
+  padding: 10px;
+  width: 100%
+}
+
+.checkout label{
+  margin-top: 10px;
+}
+
+.checkout select{
+  padding: 10px;
+  border: 1px solid #808080;
+}
+
+.city-pincode-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.city-input, .pincode-input{
+  flex: 1;
+  margin-right: 10px;
+}
+
+.payment-section{
+  margin-top: 50px;
+}
+
+.checkout-container{
+  margin-top: 50px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 15px;
+
+}
+
+.checkbox{
+  display: flex
+}
+
+.checkbox>p{
+margin-top: 20px;
+margin-right: 40px;
+font-size: 13px;
+}
+
+.checkbox input{
+  padding: 5px;
+  margin-right: 10px;
+  width:5%
+}

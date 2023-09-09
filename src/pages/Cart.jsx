@@ -1,13 +1,30 @@
 import { useContext, useEffect, useState } from "react"
 import { DataContainer } from "../App"
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import{SlTrash} from 'react-icons/sl'
+import { Checkout } from "./Checkout";
 
 const Cart = () => {
   const [expand, setExpand] = useState(false);
   const { CartItem, setCartItem, addToCart, decreaseQty, deleteProduct} =useContext(DataContainer);
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
+  const [hasItems, setHasItems] = useState(CartItem.length > 0);
+  
+
+  const navigate = useNavigate()
+  const handleCheckoutClick = () =>{
+    if (hasItems) {
+     navigate('/checkout',{
+      state: {
+        cartItems: CartItem,
+        totalAmount: totalPrice
+      }
+     })
+     
+    }
+  }
+
   useEffect(()=> {
     window.scrollTo(0,0);
     if(CartItem.length ===0) {
@@ -78,13 +95,18 @@ const Cart = () => {
                    <p style={{marginLeft: '100px'}}>Free</p>
                   </div>
                   <hr />
+    
                   <div className=' d-flex'>
                     <h3>Total Price :</h3>
                     <h3 style={{marginLeft:'90px'}}>${totalPrice}.00</h3>
                   </div>
                   <hr />
                   <div>
-                    <button className="btn btn-success" style={{width:'100%'}}>Continue To Checkout</button>
+                  {hasItems ? ( <button className="btn btn-success" style={{ width: "100%" }} onClick={handleCheckoutClick}>
+                    Continue To Checkout
+                  </button>):(<button className="btn btn-success" style={{ width: "100%" }} disabled>
+                    Continue To Checkout
+                  </button>)}
                   </div>
                 </div>
                 <div>
