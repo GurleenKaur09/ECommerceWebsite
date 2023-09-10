@@ -97,6 +97,8 @@ button {
   overflow: hidden;
 }
 
+
+
 .filter-bar-contianer .row {
   flex-wrap: wrap-reverse !important;
   margin-left: -30px;
@@ -118,6 +120,7 @@ button {
 .product-page img {
   width: 100%;
   height: 100%;
+  
   object-fit: contain;
 }
 
@@ -388,7 +391,9 @@ button.delete ion-icon {
 .sort-bars{
   display: flex;
   justify-content: space-around;
+  margin-left: 750px;
 }
+
 
 .checkout{
   display: flex;

@@ -2,6 +2,7 @@ import Select from 'react-select';
 import { products } from '../utils/products';
 
 const options = [
+    {value: 'popularity', label: 'Popularity'},
     { value: "sofa", label: "Sofa" },
     { value: "chair", label: "Chair" },
     { value: "watch", label: "Watch" },
@@ -43,8 +44,8 @@ const FilterSelect = ({setFilterList}) => {
     return (
     <Select
     options={options}
-    defaultValue={{ value: "", label: "Category" }}
-    styles={customStyles}
+    defaultValue={{ value: "", label: "Popularity" }}
+    
     onChange={handleChange}
     />
     );
