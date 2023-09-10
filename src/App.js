@@ -28,13 +28,12 @@ function App() {
     }
   }
 
-  const addToWishlist = (product,num=1) => {
+  const addToWishlist = (product, num=1) => {
     const productExit = WishlistItem.find((item) => item.id === product.id)
     if (productExit) {
       setWishlistItem(WishlistItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + num } : item)))
-    }
-    else {
-      setWishlistItem([WishlistItem, { ...product, qty: num }])
+    } else {
+      setWishlistItem([...WishlistItem, { ...product, qty: num }])
     }
   }
 
@@ -61,9 +60,9 @@ function App() {
       localStorage.setItem("cartItem",JSON.stringify(CartItem));
   },[CartItem])
 
-  useEffect(()=> {
-    localStorage.setItem("WishlistItem",JSON.stringify(WishlistItem));
-  },[WishlistItem])
+  // useEffect(()=> {
+  //   localStorage.setItem("WishlistItem",JSON.stringify(WishlistItem));
+  // },[WishlistItem])
 
   return (
     <DataContainer.Provider value={{CartItem,setCartItem,addToCart,decreaseQty,deleteProduct,selectedProduct,setSelectedProduct,WishlistItem,setWishlistItem,addToWishlist,deleteWishlist}}>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./searchbar.css";
 import { products } from "../../utils/products";
 const SearchBar = ({setFilterList}) => {
     const [inputValue,setInputValue] =useState(null);

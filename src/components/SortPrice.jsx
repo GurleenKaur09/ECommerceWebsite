@@ -3,16 +3,21 @@ import Select from 'react-select';
 import { products } from '../utils/products';
 
 const PriceRangeSelect = ({ setFilterList }) => {
-  const handleChange = (selectedRange) => {
-    // Split the selected price range and convert it to numbers
-    const [minPrice, maxPrice] = selectedRange.value.split('-').map(Number);
-    
-    // Filter products based on the selected price range
-    setFilterList(products.filter(item => {
-      const productPrice = item.price; // Assuming product.price is a number
-      return productPrice >= minPrice && productPrice <= maxPrice;
-    }));
-  };
+    const handleChange = (selectedOption) => {
+        if (selectedOption.value === 'All Products') {
+          // If "All Products" is selected, set the filter to include all products
+          setFilterList(products.filter(item => item.category ));
+        } else {
+          // Split the selected price range and convert it to numbers
+          const [minPrice, maxPrice] = selectedOption.value.split('-').map(Number);
+      
+          // Filter products based on the selected price range
+          setFilterList(products.filter(item => {
+            const productPrice = item.price; // Assuming product.price is a number
+            return productPrice >= minPrice && productPrice <= maxPrice;
+          }));
+        }
+      };
 
   const customStyles = {
     control: (provided) => ({
@@ -42,6 +47,7 @@ const PriceRangeSelect = ({ setFilterList }) => {
 };
 
   const options = [
+    {value: 'All Products', label: 'All Products'},
     { value: '0-99', label: '0 - 99' },
     { value: '100-199', label: '100 - 199' },
     { value: '200-299', label: '200 - 299' },
@@ -55,9 +61,9 @@ const PriceRangeSelect = ({ setFilterList }) => {
   return (
     <Select
       options={options}
-      defaultValue={{ value: "", label: 'Prices' }}
+      defaultValue={{ value: '', label: 'All Products' }}
       onChange={handleChange}
-      styles={customStyles}
+      
     />
   );
 };

@@ -3,9 +3,8 @@ import { DataContainer } from "../App"
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import{SlTrash} from 'react-icons/sl'
-import { Checkout } from "./Checkout";
 
-const Cart = () => {
+const Wishlist = () => {
   const [expand, setExpand] = useState(false);
   const { WishlistItem, setWishlistItem, deleteWishlist, addToWishlist} =useContext(DataContainer);  
   const [hasItems, setHasItems] = useState(WishlistItem.length > 0);
@@ -25,8 +24,8 @@ const Cart = () => {
               <Col>
               <h5> Wishlist({WishlistItem.length}) </h5>
                <hr />
+               {WishlistItem.length === 0 && <h1 className='no-items product'>No Items are added in Wishlist</h1>}
                 {WishlistItem.map((item) => {
-                //   const productQty = item.price * item.qty
                   return (
                     <div className='cart-list' key={item.id}>
                       <Row>
@@ -40,8 +39,7 @@ const Cart = () => {
                               <p style={{fontSize:'15px', color:'gray'}}>Estimated Delivery: <span style={{color: 'green'}}>Today</span></p>
                               <h4 style={{marginTop: '0px'}}>
                                 ${item.price}.00 
-                                {/* <span>${productQty}.00</span> */}
-                              </h4>
+                                </h4>
                             </Col>
                           </Row>
                         </Col>
@@ -59,4 +57,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Wishlist

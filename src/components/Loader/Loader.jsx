@@ -1,5 +1,4 @@
 import { RotateLoader } from "react-spinners";
-import "./loader.css"
 const Loader = () => {
     return (
         <div className="loader">

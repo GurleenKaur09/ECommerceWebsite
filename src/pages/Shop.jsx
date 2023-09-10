@@ -22,19 +22,22 @@ const Shop = () => {
    
     return ( 
         <Fragment>
-            <div className="shopping">
-            <h3 style={{marginLeft: '-60px'}}>Shop Products</h3>
+            <SliderHome />
+            <div className="d-flex" style={{marginLeft:'180px', color:'gray'}}>
+            <h3 style={{marginLeft: '-100px'}}>Shop Products</h3>
+            <div className="sort-bars" >
+                <div > <FilterSelect setFilterList={setFilterList}/>
+                    <span>Sorted By</span>
+                </div>
+            <div style={{marginLeft:'40px'}}><PriceRangeSelect setFilterList={setFilterList} />
+                <span>Filtered By Price</span>
+            </div>
+            </div>
             </div>
             <section className="filter-bar">
                 <Container style={{maxWidth: '1600px'}} className="filter-bar-contianer">
-                    <Row className="justify-content-center">
-                        <Col md={4}>
-                            <div className="sort-bars">
-                            <FilterSelect setFilterList={setFilterList}/>
-                            <PriceRangeSelect setFilterList={setFilterList} />
-                            </div>
-                        </Col>
-                        <Col md={8}>
+                    <Row className="justify-content-center">   
+                        <Col style={{marginTop: '-70px'}} md={8}>
                             <SearchBar setFilterList={setFilterList}/>
                         </Col>
                     </Row>

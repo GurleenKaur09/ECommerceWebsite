@@ -6,9 +6,9 @@ import {products ,discoutProducts } from "../utils/products"
 import { DataContainer } from "../App"
 import SliderHome from "../components/Slider"
 import Gifts from "../components/Gifts/Gifts"
-import Poster from "../components/Poster/Poster"
 import newarrival from "../Images/newarrival.jpg"
 import midnight from "../Images/midnight.jpg"
+import advertisement from "../Images/advertisement.jpg"
 import Categories from "../components/Category/Categories"
 
 const Home = () => {
@@ -37,7 +37,9 @@ const Home = () => {
       </div><br />
       <Section title="New Arrivals" bgColor="white" productItems={newArrivalData} addToCart={addToCart} addToWishlist={addToWishlist}/>
       <Section title="Best Sales" bgColor="#f6f9fc" productItems={bestSales} addToCart={addToCart} addToWishlist={addToWishlist}/>
-      <Poster />
+      <div>
+        <img className="poster-img" src={advertisement} />
+      </div>
       <br />
     </Fragment>
   )

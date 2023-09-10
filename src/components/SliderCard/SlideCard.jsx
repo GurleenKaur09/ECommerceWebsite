@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./slidercard.css";
 
 const SlideCard = ({title,desc,cover}) => {
   const [expand, setExpand] = useState(false);
