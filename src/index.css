@@ -953,3 +953,60 @@ font-size: 13px;
   margin-right: 10px;
   width:5%
 }
+
+.logs-body h1{
+  text-align: center;
+}
+
+.logs-inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.logs-inputs input {
+  border: 1px solid #333;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.logs-inputs select {
+  border: 1px solid #333;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.body{
+  background-color: rgb(229, 239, 252);
+  height: 100vh;
+  top:0
+}
+
+.logs-texts{
+  margin-top: 30px;
+  margin-left:20px ;
+}
+
+.logs-container button{
+  align-items: center;
+  max-width: 350px;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 90px;
+}
+
+.google-sign{
+  display: flex;
+  margin-left: 170px;
+}
+
+

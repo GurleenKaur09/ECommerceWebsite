@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import { Checkout } from "./pages/Checkout";
+import { Sign } from "./components/Sign";
 const Home =lazy(()=> import("./pages/Home"))
 const Shop =lazy(()=> import("./pages/Shop"))
 const Cart =lazy(()=> import("./pages/Cart"))
@@ -87,6 +88,7 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/checkout' element={<Checkout/>} />
             <Route path='/wishlist' element={<Wishlist/>} />
+            <Route path='/sign' element={<Sign/>}></Route>
           </Routes>
           <Footer />
         </Router>
